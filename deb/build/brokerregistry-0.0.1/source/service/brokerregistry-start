@@ -1,0 +1,7 @@
+#!/bin/bash
+. /etc/brokerregistry/service.conf
+
+cd /home/brokerregistry/api/
+/home/$APP_USER/bin/python3 /home/$APP_USER/bin/api.py
+
+exit 0

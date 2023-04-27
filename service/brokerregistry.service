@@ -1,0 +1,17 @@
+[Unit]
+Description=Brokerregistry
+After=network.target
+
+[Service]
+#BindReadOnlyPaths=/usr/bin:/usr/bin
+#BindReadOnlyPaths=/usr/lib:/usr/lib
+User=brokerregistry
+Type=simple
+#WorkingDirectory=/home/brokerregistry/runtime
+#RootDirectory=/home/brokerregistry/root
+ExecStart=/bin/bash /home/brokerregistry/bin/brokerregistry-start
+ExecStop=/bin/bash /home/brokerregistry/brokerregistry-stop
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

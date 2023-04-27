@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_install:
+	mkdir -p debian/brokerregistry/etc/brokerregistry/;
+	mkdir -p debian/brokerregistry/home/brokerregistry/bin/;
+	mkdir -p debian/brokerregistry/usr/share/man/man1/;
+	mkdir debian/brokerregistry/home/brokerregistry/api/;
+	mkdir debian/brokerregistry/home/brokerregistry/etc/;
+	mkdir debian/brokerregistry/home/brokerregistry/certificates/;
+	mkdir debian/brokerregistry/home/brokerregistry/storage/;
+	cp -r source/api/* debian/brokerregistry/home/brokerregistry/api/;
+	cp -r source/conf/* debian/brokerregistry/home/brokerregistry/etc/;
+	cp -r source/service/* debian/brokerregistry/home/brokerregistry/bin/;
+	cp -r source/bin/* debian/brokerregistry/home/brokerregistry/bin/;

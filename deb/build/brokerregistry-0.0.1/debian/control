@@ -1,0 +1,10 @@
+Source: brokerregistry
+Section: misc
+Priority: optional
+Maintainer: Shooty215 <b.heinr@web.de>
+Build-Depends: debhelper (>= 10)
+
+Package: brokerregistry
+Architecture: all
+Depends: openjdk-11-jdk
+Description: Api-Mqtt-cross, handling dirPic network register node.

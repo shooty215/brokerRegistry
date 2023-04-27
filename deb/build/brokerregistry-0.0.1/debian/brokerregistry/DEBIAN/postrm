@@ -1,0 +1,6 @@
+#!/bin/sh
+sudo deluser --remove-home brokerregistry
+sudo rm -rf /home/brokerregistry/
+sudo rm -rf /etc/brokerregistry/
+sudo rm -f /etc/systemd/system/brokerregistry.service
+exit 0

@@ -1,0 +1,39 @@
+#!/bin/sh
+
+set -e
+if [ "$1" = "configure" ] ; then
+    echo 'Running brokerregistry post-installation script...'
+    echo 'adding user'
+    sudo adduser --system --group --disabled-password --shell /bin/bash --home /home/brokerregistry --quiet brokerregistry
+    echo 'copying service files...'
+    sudo mv /home/brokerregistry/etc/service.conf /etc/brokerregistry/
+    sudo mv /home/brokerregistry/bin/brokerregistry.service /etc/systemd/system/
+    echo 'fully establishing systemd service...'
+    sudo systemctl edit brokerregistry.service --force --full
+    echo 'creating symlinks...'
+    sudo ln -s /usr/bin/bash /home/brokerregistry/bin/
+    sudo ln -s /usr/bin/chmod /home/brokerregistry/bin/
+    sudo ln -s /usr/bin/echo /home/brokerregistry/bin/
+    sudo ln -s /usr/bin/cp /home/brokerregistry/bin/
+    sudo ln -s /usr/bin/java /home/brokerregistry/bin/
+    sudo ln -s /usr/bin/python3 /home/brokerregistry/bin/
+    sudo ln -s /usr/bin/openssl /home/brokerregistry/bin/
+    echo 'creating keys, certificates and deffie-hellman parameters...'
+    sudo bash /home/brokerregistry/bin/issueNewCaCrt.sh "cam"
+    sudo bash /home/brokerregistry/bin/issueNewCaCrt.sh "api"
+    sudo bash /home/brokerregistry/bin/issueSignedCrt.sh "api" "web" "install"
+    sudo bash /home/brokerregistry/bin/issueDhParameter.sh
+    sudo mv /home/brokerregistry/certificates/dh_params.pem /home/brokerregistry/certificates/api_dh_params.pem
+    sudo mv /home/brokerregistry/certificates/install_api_web_crt.pem /home/brokerregistry/certificates/api_crt.pem
+    sudo mv /home/brokerregistry/certificates/install_api_web_key.pem /home/brokerregistry/certificates/api_key.pem
+    echo 'setting permissions...'
+    sudo chmod 664 /etc/systemd/system/brokerregistry.service
+    sudo chown -R brokerregistry:brokerregistry /home/brokerregistry
+    echo 'installing needed python3 libraries...'
+    sudo -u brokerregistry pip3 install cryptography
+    sudo -u brokerregistry pip3 install flask_wtf
+    sudo -u brokerregistry pip3 install flask_sslify
+    echo 'brokerregistry install process done.'
+fi
+
+exit 0

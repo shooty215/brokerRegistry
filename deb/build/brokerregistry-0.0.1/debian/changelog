@@ -1,0 +1,7 @@
+brokerregistry (0.0.1) dev; urgency=low
+
+  [ Shooty215 ]
+  * defining deb file, install process, dependencies, web-api and mqtt-publisher
+  * debugging said things
+
+-- Shooty215 b.heinr@web.de --
