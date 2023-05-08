@@ -57,41 +57,41 @@ then
     INPUT_PATH_CRT_KEY_PEM=$PATH_CERTIFICATES$3$PATH_CAM_CLIENT_CRT_KEY_PEM
     INPUT_CRT_CONF=$PATH_CONFIG$PATH_CLIENT_CONF
 else
-    echo " "
-    echo "Error handling inputs!"
-    echo " "
+    #echo " "
+    #echo "Error handling inputs!"
+    #echo " "
     exit 1
 fi
 
 INPUT_RSA_KEY_LENGTH=$RSA_KEY_LENGTH
 INPUT_CRT_DAYS=$CRT_DAYS
 
-echo "Generating client private key"
-echo " "
+#echo "Generating client private key"
+#echo " "
 $OPENSSL_CMD genpkey -pass pass:$INPUT_CRT_KEY_PWD -algorithm RSA -out $INPUT_PATH_CRT_KEY -pkeyopt rsa_keygen_bits:$INPUT_RSA_KEY_LENGTH -aes256
-echo " "
+#echo " "
 
-echo " "
-echo "Generating certificate signing request for client"
-echo " "
+#echo " "
+#echo "Generating certificate signing request for client"
+#echo " "
 $OPENSSL_CMD req -passin pass:$INPUT_CRT_KEY_PWD -new -key $INPUT_PATH_CRT_KEY -out $INPUT_PATH_CRT_CSR -config $INPUT_CRT_CONF
-echo " "
+#echo " "
 
-echo " "
-echo "Generating RootCA signed broker certificate"
-echo " "
+#echo " "
+#echo "Generating RootCA signed broker certificate"
+#echo " "
 $OPENSSL_CMD x509 -req -days $INPUT_CRT_DAYS -in $INPUT_PATH_CRT_CSR -CA $INPUT_PATH_CA_CRT -CAkey $INPUT_PATH_CA_KEY -passin pass:$INPUT_CA_KEY_PWD -out $INPUT_PATH_CRT -CAcreateserial -extfile $INPUT_CRT_CONF -SHA256
-echo " "
+#echo " "
 
-echo " "
-echo "Turning Keys To PEM"
+#echo " "
+#echo "Turning Keys To PEM"
 $OPENSSL_CMD rsa -passin pass:$INPUT_CRT_KEY_PWD -in $INPUT_PATH_CRT_KEY -text > $INPUT_PATH_CRT_KEY_PEM
-echo " "
+#echo " "
 
-echo " "
-echo "Deleting Unwanted Files"
+#echo " "
+#echo "Deleting Unwanted Files"
 rm -rf deployables/caCrt.srl
 rm -rf $INPUT_PATH_CRT_CSR
-echo " "
+#echo " "
 
 exit 0

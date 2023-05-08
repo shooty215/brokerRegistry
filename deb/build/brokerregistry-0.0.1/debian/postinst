@@ -33,6 +33,7 @@ if [ "$1" = "configure" ] ; then
     sudo -u brokerregistry pip3 install cryptography
     sudo -u brokerregistry pip3 install flask_wtf
     sudo -u brokerregistry pip3 install flask_sslify
+    sudo -u brokerregistry pip3 install flask_session
     echo 'brokerregistry install process done.'
 fi
 
