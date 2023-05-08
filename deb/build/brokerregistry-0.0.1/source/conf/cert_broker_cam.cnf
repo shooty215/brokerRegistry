@@ -1,0 +1,17 @@
+[ req ]
+default_bit = 4096
+req_extensions = v3_req
+distinguished_name = req_distinguished_name
+prompt = no
+
+[ req_distinguished_name ]
+countryName             = DE
+organizationName        = dirPic
+o
+commonName 				= 5.45.99.156:1884
+
+[ v3_req ]
+basicConstraints        = critical, CA:FALSE
+keyUsage                = critical, digitalSignature, keyEncipherment
+extendedKeyUsage        = serverAuth, clientAuth
+subjectAltName          = DNS: 0.0.0.0:1884
