@@ -22,19 +22,22 @@ if [ "$1" = "configure" ] ; then
     sudo bash /home/brokerregistry/bin/issueNewCaCrt.sh "cam"
     sudo bash /home/brokerregistry/bin/issueNewCaCrt.sh "api"
     sudo bash /home/brokerregistry/bin/issueSignedCrt.sh "api" "web" "install"
-    sudo bash /home/brokerregistry/bin/issueDhParameter.sh
-    sudo mv /home/brokerregistry/certificates/dh_params.pem /home/brokerregistry/certificates/api_dh_params.pem
     sudo mv /home/brokerregistry/certificates/install_api_web_crt.pem /home/brokerregistry/certificates/api_crt.pem
     sudo mv /home/brokerregistry/certificates/install_api_web_key.pem /home/brokerregistry/certificates/api_key.pem
     echo 'setting permissions...'
     sudo chmod 664 /etc/systemd/system/brokerregistry.service
     sudo chown -R brokerregistry:brokerregistry /home/brokerregistry
     echo 'installing needed python3 libraries...'
-    sudo -u brokerregistry pip3 install cryptography
+    #sudo -u brokerregistry pip3 install cryptography==40.0.0
+    #sudo -u brokerregistry pip3 install pycryptodome
+    #sudo -u brokerregistry pip3 install uvicore
+    #sudo -u brokerregistry pip3 install urllib
+    #sudo -u brokerregistry pip3 install asgiref
+    #sudo -u brokerregistry pip3 install flask
+    sudo -u brokerregistry pip3 install flask_session
     sudo -u brokerregistry pip3 install flask_wtf
     sudo -u brokerregistry pip3 install flask_sslify
-    sudo -u brokerregistry pip3 install flask_session
-    echo 'brokerregistry install process done.'
+    #echo 'brokerregistry install process done.'
 fi
 
 exit 0

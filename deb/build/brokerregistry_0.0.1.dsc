@@ -8,8 +8,8 @@ Build-Depends: debhelper (>= 10)
 Package-List:
  brokerregistry deb misc optional arch=all
 Checksums-Sha1:
- 2fdc08b9787a948a3c3b6dc915e17daa83e02ddb 10770727 brokerregistry_0.0.1.tar.gz
+ 2882a2d3e51c2b53429b0136b9c38357c9d8f780 10799548 brokerregistry_0.0.1.tar.gz
 Checksums-Sha256:
- 2b3fdff9a7e2923447e4657d02d154625ed2d2bfa9a513589cae0234e3481d9e 10770727 brokerregistry_0.0.1.tar.gz
+ 2ad35e308b39efd3d37cde55575417ff70ea4b42dfb43d66b5f92897526a3419 10799548 brokerregistry_0.0.1.tar.gz
 Files:
- 18c96c6c372036c7ed14a4b63a626cf5 10770727 brokerregistry_0.0.1.tar.gz
+ 41b536a3971d1c986662ee91722308b2 10799548 brokerregistry_0.0.1.tar.gz

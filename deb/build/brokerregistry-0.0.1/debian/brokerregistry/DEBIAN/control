@@ -2,7 +2,7 @@ Package: brokerregistry
 Version: 0.0.1
 Architecture: all
 Maintainer: Shooty215 <b.heinr@web.de>
-Installed-Size: 12546
+Installed-Size: 12597
 Depends: openjdk-11-jdk
 Section: misc
 Priority: optional

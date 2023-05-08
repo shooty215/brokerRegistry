@@ -609,6 +609,5 @@ def get_als_rsa() -> Response:
 async_api_asgi = WsgiToAsgi(async_api)
 phMid = ProxyHeadersMiddleware(async_api, trusted_hosts="127.0.0.1")
 
-#sudo -u brokerregistry /bin/python3 /home/sht/github/brokerRegistry/api/api.py
 if __name__ == PYTHON_LIFECYCLE_MAIN:
     Service.main()

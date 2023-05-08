@@ -7,7 +7,6 @@ prompt = no
 [ req_distinguished_name ]
 countryName             = DE
 organizationName        = dirPic
-o
 commonName 				= 5.45.99.156:1884
 
 [ v3_req ]

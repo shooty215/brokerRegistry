@@ -1,5 +1,5 @@
 Format: 1.8
-Date: Mon, 08 May 2023 15:05:09 +0200
+Date: Mon, 08 May 2023 17:42:47 +0200
 Source: brokerregistry
 Binary: brokerregistry
 Architecture: source all
@@ -16,17 +16,17 @@ Changes:
    * defining deb file, install process, dependencies, web-api and mqtt-publisher
    * debugging said things
 Checksums-Sha1:
- 6b2ba894028a5b349faa9720cc3f400a82fc94ad 514 brokerregistry_0.0.1.dsc
- 2fdc08b9787a948a3c3b6dc915e17daa83e02ddb 10770727 brokerregistry_0.0.1.tar.gz
- cbcd25485a2f221f27316126d61c1507cf0e0c7a 7256660 brokerregistry_0.0.1_all.deb
- a25d962a0c4bde10ca91022c937277615e2346ad 6552 brokerregistry_0.0.1_amd64.buildinfo
+ 0adb89bbef69fc652d0928dc1b63f07039187f55 514 brokerregistry_0.0.1.dsc
+ 2882a2d3e51c2b53429b0136b9c38357c9d8f780 10799548 brokerregistry_0.0.1.tar.gz
+ 23309bccb205afe06cd696914022dbb4cbb9d2b7 7256476 brokerregistry_0.0.1_all.deb
+ b8a8b215b0f9659c6672604f44a914fead536b76 6552 brokerregistry_0.0.1_amd64.buildinfo
 Checksums-Sha256:
- ee935fdb98474e6ee776fc427f038d18df35e65160037b5f177724103c0a33e2 514 brokerregistry_0.0.1.dsc
- 2b3fdff9a7e2923447e4657d02d154625ed2d2bfa9a513589cae0234e3481d9e 10770727 brokerregistry_0.0.1.tar.gz
- 85bdb9af4f9a484d24be4696772ffe2545d200f04b79cb751e432e101984d210 7256660 brokerregistry_0.0.1_all.deb
- f86f21110f5fb5d615cbf918ab7ea20ad293fa0ecb6ae2233aa9cc6f12f15114 6552 brokerregistry_0.0.1_amd64.buildinfo
+ 853a767a0b44b1aabc685a9225edf993d5b4ad1e61a259d497f0be450c3d2ce3 514 brokerregistry_0.0.1.dsc
+ 2ad35e308b39efd3d37cde55575417ff70ea4b42dfb43d66b5f92897526a3419 10799548 brokerregistry_0.0.1.tar.gz
+ c24b853326fa864986345481b6b6d34056f18c7c4c3405a9ba82de97524f4f97 7256476 brokerregistry_0.0.1_all.deb
+ aad2a902b6cf7e9129309ec3273a7aaa9d59a81a086c6f8e9f738c29b6cdd133 6552 brokerregistry_0.0.1_amd64.buildinfo
 Files:
- b88fdf68c9d83afaf46de18765b2683a 514 misc optional brokerregistry_0.0.1.dsc
- 18c96c6c372036c7ed14a4b63a626cf5 10770727 misc optional brokerregistry_0.0.1.tar.gz
- d1e367e087bddf48056fcb79d7dd77f5 7256660 misc optional brokerregistry_0.0.1_all.deb
- 66cc120a5dbe33811b8ba524169d6d46 6552 misc optional brokerregistry_0.0.1_amd64.buildinfo
+ 9033cad5aa521fd3f981ab66d63555b7 514 misc optional brokerregistry_0.0.1.dsc
+ 41b536a3971d1c986662ee91722308b2 10799548 misc optional brokerregistry_0.0.1.tar.gz
+ 8476064c3da4f85445a37f76b6fa3ece 7256476 misc optional brokerregistry_0.0.1_all.deb
+ f6e74299618b2adcce94050a55032676 6552 misc optional brokerregistry_0.0.1_amd64.buildinfo
