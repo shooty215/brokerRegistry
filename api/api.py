@@ -122,7 +122,7 @@ CONTEXT_PASSWORD                                : str   = 'AWFuIITe2kOsPzEO15LFK
 CONTEXT_CRT                                     : str   = PATH_API_CRT
 CONTEXT_KEY                                     : str   = PATH_API_KEY
 CONTEXT_CA                                      : str   = PATH_API_CA_CRT
-CONTEXT_CIPHERS                                 : str   = "ECDHE-RSA-AES128-GCM-SHA256"
+CONTEXT_CIPHERS                                 : str   = 'ECDHE-RSA-AES128-GCM-SHA256'
 PERMISSION_FILE_OPEN_READ                       : str   = 'r'
 INDEX_ARRAY_0                                   : int   = 0
 INDEX_ARRAY_1                                   : int   = 1
@@ -296,16 +296,16 @@ class Service:
         logging.info(LOG_ISSUING_START)
         if caType == TLS_CA_TYPE_CAM and certType == TLS_CRT_TYPE_CLIENT:
             valKey: str     = PATH_CERTIFICATES + identifier + PATH_CAM_CLIENT_KEY
-            valCrt: str    = PATH_CERTIFICATES + identifier + PATH_CAM_CLIENT_CRT
+            valCrt: str     = PATH_CERTIFICATES + identifier + PATH_CAM_CLIENT_CRT
         elif caType == TLS_CA_TYPE_CAM and certType == TLS_CRT_TYPE_BROKER:
             valKey: str     = PATH_CERTIFICATES + identifier + PATH_CAM_BROKER_KEY
-            valCrt: str    = PATH_CERTIFICATES + identifier + PATH_CAM_BROKER_CRT
+            valCrt: str     = PATH_CERTIFICATES + identifier + PATH_CAM_BROKER_CRT
         elif caType == TLS_CA_TYPE_API and certType == TLS_CRT_TYPE_CLIENT:
             valKey: str     = PATH_CERTIFICATES + identifier + PATH_API_CLIENT_KEY
-            valCrt: str    = PATH_CERTIFICATES + identifier + PATH_API_CLIENT_CRT
+            valCrt: str     = PATH_CERTIFICATES + identifier + PATH_API_CLIENT_CRT
         elif caType == TLS_CA_TYPE_API and certType == TLS_CRT_TYPE_BROKER:
             valKey: str     = PATH_CERTIFICATES + identifier + PATH_API_BROKER_KEY
-            valCrt: str    = PATH_CERTIFICATES + identifier + PATH_API_BROKER_CRT
+            valCrt: str     = PATH_CERTIFICATES + identifier + PATH_API_BROKER_CRT
         else:
             return FAILURE
         if keyPwd != None:
@@ -384,6 +384,7 @@ class Service:
         else:
             return Service.failureResponse()
         '''
+    
     def handleHttpCaCrtPostRequest(caType: str):
         logging.info(LOG_API_REQUEST_CREATION_API_CA_POST)
         if Service.validate.script(Service.issueNewCaCrt(caType)):
